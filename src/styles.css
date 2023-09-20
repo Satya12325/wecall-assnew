@@ -1,0 +1,77 @@
+/* Styles for the card */
+.App {
+  padding-left: 50px;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+.card {
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  background-color: #f6f9fb;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+.card:nth-child(even) {
+  background-color: white;
+}
+/* Styles for the content inside the card */
+.cardcontents {
+  margin: 1.25rem 0 0;
+  font-size: calc(1.04167 * 1vw);
+  line-height: 1.47;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in transition */
+}
+
+/* Styles for the curved background on hover */
+.card:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to top, transparent 50%, #fff 50%);
+  border-radius: 50% 50% 0 0;
+  transform: translateX(-50%);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+/* Styles for the hover effect */
+.card:hover {
+  cursor: pointer;
+  background-color: #fff;
+  transform: scale(1.1); /* Zoom up effect */
+}
+
+.card:hover .cardcontents {
+  opacity: 1; /* Show the <p> tag with a fade-in effect */
+}
+
+.card:hover:before {
+  transform: translateX(-50%) translateY(-100%);
+}
+.cardcontent > h2 {
+  width: 60%;
+}
+.industryCard {
+  width: 50%;
+}
+.industryCard > h1 {
+  font-weight: bolder;
+  width: 60%;
+}
+.parantContainer {
+  display: flex;
+}
+.cardContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
